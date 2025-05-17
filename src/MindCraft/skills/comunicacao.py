@@ -1,23 +1,17 @@
-import os
-from dotenv import load_dotenv
+import os                    # Necessário para carregar variáveis de ambiente com dotenv
+from dotenv import load_dotenv  # Usado para carregar .env
 
-# Importações do Google ADK e GenAI
-from google import genai
-from google.adk.tools import google_search
-from google.genai import types # Para criar conteúdos (Content e Part)
-from datetime import date
+from google import genai         # Usado para criar client e chat
+from google.genai import types  # Usado para GenerateContentConfig
 
-from agentes.agente import Agente
-from utils.form import Form
+from datetime import date        # Usado para pegar a data atual
+
+from agentes.agente import Agente   # Usado (agente = Agente())
+from utils.form import Form         # Usado (form = Form())
+
 
 def iniciar_aula():
-    '''
-    Ao iniciar a aula, deverá ser criado um chat com o agente
-    do tema e as informações pesquisadas e redigidas. Esse chat ficará rodando em loop sempre
-    pedindo inputs do usuário ao final. Devo definir uma condição de parada no loop (que
-    poderá ser informada ao usuário ou eu adiciono algo na interface que vai parar o loop).
-    '''
-    
+
     # Instanciar o client com a GOOGLE_API_KEY como variável de ambiente
     load_dotenv()
     client = genai.Client(api_key='GOOGLE_API_KEY')
@@ -59,7 +53,7 @@ def iniciar_aula():
 
     # Loop de iteração com o usuário
     print("(92%) Estruturando conteúdos...")
-    prompt = f"Ensine sobre: {topico}\nMaterial de base: \n{texto_redigido}\n\nQuestionário respondido sobre seu aluno para que você o conheça um pouco:\n{formulario_respondido}"
+    prompt = f"Ensine sobre: {topico}\nMaterial de base: \n{texto_redigido}\n\nQuestionário respondido para você conhecer mais sobre mim:\n{formulario_respondido}"
     while prompt.lower() != "encerrar":
         resposta = chat.send_message(prompt)
         print(f'\n🔴 {resposta.text}')
