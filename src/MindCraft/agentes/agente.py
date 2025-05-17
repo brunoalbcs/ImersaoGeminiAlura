@@ -318,7 +318,7 @@ class Agente:
 
 
 # Exemplo de como você poderia usar (apenas para ilustração, fora da classe):
-if __name__ == '__main__':
+'''if __name__ == '__main__':
     # Configurar GOOGLE_API_KEY como variável de ambiente
     load_dotenv() # Descomente se estiver usando um arquivo .env para a API key
     client = genai.Client(api_key='GOOGLE_API_KEY')
@@ -345,7 +345,7 @@ if __name__ == '__main__':
             licao_comunicacao = meu_agente_ia.comunicacao("Técnicas de Oratória para Apresentações", texto_redigido_e_estruturado)
             print("--- Lição de Comunicação (Oratória) ---")
             print(licao_comunicacao)
-            print("\n")
+            print("\n")'''
 
             # Exemplo para Educacao Financeira
             # conteudo_pesquisado_fin = meu_agente_ia.pesquisador("Como criar uma reserva de emergência com pouco dinheiro", hoje)
