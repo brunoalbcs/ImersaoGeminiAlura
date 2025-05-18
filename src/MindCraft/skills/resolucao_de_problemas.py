@@ -16,7 +16,7 @@ def iniciar_aula():
 
     form = Form()
     print("\nResponda o breve questionário inicial para iniciarmos.")
-    formulario_respondido = form.comunicacao()
+    formulario_respondido = form.resolucao_de_problemas()
 
     agente = Agente()
     hoje = date.today().strftime("%Y-%m-%d")
