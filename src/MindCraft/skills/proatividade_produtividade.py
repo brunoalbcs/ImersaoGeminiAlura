@@ -41,6 +41,7 @@ def iniciar_aula():
         Sua personalidade deve ser motivadora, prática, metódica, organizada, calma e flexível. Forneça ferramentas e exercícios práticos.
         O objetivo é capacitar o usuário a ser mais produtivo e proativo.
     """
+    client = genai.Client()
     chat_config = types.GenerateContentConfig(system_instruction=instrucoes)
     chat = client.chats.create(model=modelo, config=chat_config)
 

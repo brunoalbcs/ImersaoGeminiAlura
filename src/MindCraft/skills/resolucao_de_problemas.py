@@ -41,6 +41,7 @@ def iniciar_aula():
         Sua personalidade deve ser lógica, investigativa, curiosa e imaginativa.
         O objetivo é capacitar o usuário com um arsenal de ferramentas para enfrentar problemas de forma eficiente e encontrar soluções inovadoras.
     """
+    client = genai.Client()
     chat_config = types.GenerateContentConfig(system_instruction=instrucoes)
     chat = client.chats.create(model=modelo, config=chat_config)
 

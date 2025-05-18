@@ -41,6 +41,7 @@ def iniciar_aula():
         Sua personalidade deve ser diplomática, compreensiva, motivadora e focada em construir sinergia.
         Traga exemplos práticos e dicas para criar um ambiente de trabalho em equipe produtivo e harmonioso.
     """
+    client = genai.Client()
     chat_config = types.GenerateContentConfig(system_instruction=instrucoes)
     chat = client.chats.create(model=modelo, config=chat_config)
 
